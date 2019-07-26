@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.lc.loadbutton.LoadButton;
+import com.lc.loadbutton.LoadRectView;
 import com.lc.loadbutton.LoadView;
 import com.mybutton.R;
 
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private LoadView loadview;
     private LoadButton loadbtn;
+    private LoadRectView loadRectView;
     private Button play;
 
     @Override
@@ -23,11 +25,21 @@ public class MainActivity extends AppCompatActivity {
         play=(Button)findViewById(R.id.play);
         loadbtn=(LoadButton)findViewById(R.id.loadbtn);
         loadview=(LoadView)findViewById(R.id.loadview);
+        loadRectView=(LoadRectView)findViewById(R.id.loadrectview);
         loadview.setOnClickListener(new BtnClickListener());
+        ((Button)findViewById(R.id.end)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadRectView.showPaintTxtAnima();
+            }
+        });
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadbtn.stopAnimator();
+                //loadbtn.stopAnimator();
+                loadRectView.startLoading();
+                //loadRectView.showPaintTxtAnima();
+                //loadRectView.showStartLoadAnimation();
             }
         });
         loadbtn.setOnClickListener(new View.OnClickListener() {

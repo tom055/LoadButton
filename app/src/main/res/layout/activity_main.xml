@@ -16,11 +16,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="play"/>
+    <Button
+        android:id="@+id/end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="end"/>
 
     <com.lc.loadbutton.LoadView
         android:id="@+id/loadview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+        <com.lc.loadbutton.LoadRectView
+            android:id="@+id/loadrectview"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+
+
 
 
 </LinearLayout>
